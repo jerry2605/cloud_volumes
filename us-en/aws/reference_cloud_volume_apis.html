@@ -505,7 +505,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-08-01 14:03:36 +0000">08/01/2019</time>
+<time datetime="2019-08-01 14:47:15 +0000">08/01/2019</time>
 
 
 <span>Contributors
@@ -994,24 +994,22 @@ You cannot unjoin a directory service that is in use; status "in use".
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X DELETE &lt;api_url/v1/Storage/ActiveDirectory/c64ecb4f-da51-be61-f017-b2dda78f7167 |jq</code></pre>
+<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X DELETE &lt;api_url/v1/Storage/ActiveDirectory/c64ecb4f-da51-be61-f017-b2dda78f7167 |jq
+{
+  "DNS": "172.32.2.16",
+  "UUID": "c64ecb4f-da51-be61-f017-b2dda78f7167",
+  "createdAt": "2019-07-30T19:53:38.000Z",
+  "deletedAt": "2019-07-30T20:06:57.746Z",
+  "domain": "cv-pm.local",
+  "netBIOS": "frankfurt",
+  "organizationalUnit": "OU=Cloud Servers,DC=nas-cloud,DC=local",
+  "password": "****************",
+  "region": "eu-central-1",
+  "status": "deleted",
+  "updatedAt": "2019-07-30T20:06:57.778Z",
+  "username": "Administrator"
+}</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>{<br>
-  "DNS": "172.32.2.16",<br>
-  "UUID": "c64ecb4f-da51-be61-f017-b2dda78f7167",<br>
-  "createdAt": "2019-07-30T19:53:38.000Z",<br>
-  "deletedAt": "2019-07-30T20:06:57.746Z",<br>
-  "domain": "cv-pm.local",<br>
-  "netBIOS": "frankfurt",<br>
-  "organizationalUnit": "OU=Cloud Servers,DC=nas-cloud,DC=local",<br>
-  "password": "<strong><strong></strong><strong></strong></strong><strong><strong></strong></strong>",<br>
-  "region": "eu-central-1",<br>
-  "status": "deleted",<br>
-  "updatedAt": "2019-07-30T20:06:57.778Z",<br>
-  "username": "Administrator"<br>
-}</p>
 </div>
 <div class="paragraph">
 <p><a href="media/unjoin-ad.py">Script to unjoin a directory service</a></p>
