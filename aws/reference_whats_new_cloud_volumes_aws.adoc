@@ -17,6 +17,7 @@ summary: NetApp periodically updates Cloud Volumes Service for AWS to bring you 
 NetApp periodically updates Cloud Volumes Service for AWS to bring you new features and enhancements.
 
 == August 2019
+* Cloud Volumes Service now provides up to 4,500 MB/s, instead of 3,500 MB/s, at certain capacity levels. See link:reference_selecting_service_level_and_quota.html#cost-comparison-for-service-levels-and-allocated-capacity[Selecting the service level and the allocated capacity] for details.
 * Added sample Python scripts for Active Directory functions  (link:reference_cloud_volume_apis.html[Cloud Volumes APIs]).
 
 == July 2019
