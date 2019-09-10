@@ -505,7 +505,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-07-08 21:24:58 +0000">07/08/2019</time>
+<time datetime="2019-09-10 18:34:13 +0000">09/10/2019</time>
 
 
 <span>Contributors
@@ -528,9 +528,9 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Issue</strong>: When creating a Cloud Volume, the export path specified in the <strong>Volume path</strong> field cannot include an underscore '_'.</p>
+<p><strong>Issue</strong>: A cloud volume will fail to be created via the API if 'nfsv4: true' is set, as currently the Cloud Volumes Service does not support NFSv4.</p>
 <div class="paragraph">
-<p><strong>Workaround</strong>: At this time, specify an export path without an underscore.</p>
+<p><strong>Workaround</strong>: Make sure 'nfsv4: false' is set when creating cloud volumes via the API.</p>
 </div>
 </li>
 </ul>
