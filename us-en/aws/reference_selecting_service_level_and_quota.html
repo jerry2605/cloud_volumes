@@ -505,7 +505,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-08-12 20:43:00 +0000">08/12/2019</time>
+<time datetime="2019-09-23 18:04:35 +0000">09/23/2019</time>
 
 
 <span>Contributors
@@ -672,6 +672,31 @@
 </div>
 <div class="paragraph">
 <p>Allocated capacity is specified in GBs.  A volume&#8217;s allocated capacity can be set within the range of 100 GB to 100,000 GB (equivalent to 100 TBs).</p>
+</div>
+<div class="sect2">
+<h3 id="number-of-inodes">Number of inodes</h3>
+<div class="paragraph">
+<p>Volumes less than or equal to 1 TB can use up to 20 million inodes. The number of inodes increase by 20 million for each TB you allocate, up to a maximum of 100 million inodes.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;= 1TB = 20 million inodes</p>
+</li>
+<li>
+<p>&gt;1 TB to 2 TB = 40 million inodes</p>
+</li>
+<li>
+<p>&gt;2 TB to 3 TB = 60 million inodes</p>
+</li>
+<li>
+<p>&gt;3 TB to 4 TB = 80 million inodes</p>
+</li>
+<li>
+<p>&gt;4 TB to 5 TB = 100 million inodes</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
