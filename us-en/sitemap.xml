@@ -15,14 +15,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/concept_overview.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-12-12T16:00:56+00:00</lastmod>
       
     </url>
   
@@ -71,14 +71,14 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/reference_whats_new_cloud_volumes_aws.html</loc>
       
-      <lastmod>2019-09-10T18:34:13+00:00</lastmod>
+      <lastmod>2019-12-12T16:00:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/search.html</loc>
       
-      <lastmod>2019-11-25T16:06:46+00:00</lastmod>
+      <lastmod>2019-12-12T16:02:24+00:00</lastmod>
       
     </url>
   
@@ -92,21 +92,21 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_creating_additional_export_policy_rules.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_creating_cloud_sync_data_broker.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_creating_cloud_sync_relationship.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
@@ -127,42 +127,42 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_creating_on_demand_snapshots.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_deleting_cloud_sync_data_broker.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_deleting_cloud_sync_relationship.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_deleting_cloud_volumes_for_aws.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_deleting_export_policy_rules.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_deleting_snapshots.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
@@ -176,7 +176,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_modifying_cloud_sync_schedule.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
@@ -190,35 +190,35 @@
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_modifying_export_policy_rules.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_mounting_cloud_volumes_for_aws.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-12-12T16:00:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_quick_start.html</loc>
       
-      <lastmod>2019-09-04T12:58:13+00:00</lastmod>
+      <lastmod>2019-12-12T16:00:56+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_restoring_snapshots_to_new_volumes.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/us-en/cloud_volumes/aws/task_selecting_region.html</loc>
       
-      <lastmod>2019-01-29T20:16:27+00:00</lastmod>
+      <lastmod>2019-01-30T20:33:54+00:00</lastmod>
       
     </url>
   

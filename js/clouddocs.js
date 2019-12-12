@@ -93,4 +93,31 @@ $(document).ready(function() {
 			return false;
 		}
 	}
+
+	"use strict";
+
+	function luciTooltip() {
+	    const clickableTooltips = document.querySelectorAll('.luci-tooltip'),
+	            tooltipVisibleClass = 'luci-tooltip--visible';
+
+	    function toggleTooltipVisibility(tooltip) {
+	        if (tooltip.classList.contains(tooltipVisibleClass)) {
+	            tooltip.classList.remove(tooltipVisibleClass);
+	        } else {
+	            tooltip.classList.add(tooltipVisibleClass);
+	        }
+	    }
+
+	    function handleClickableTooltipClick() {
+	        toggleTooltipVisibility(this);
+	    }
+
+	    clickableTooltips.forEach(function(t){
+	        t.addEventListener('click', handleClickableTooltipClick);
+	    });
+	}
+	
+	document.addEventListener('DOMContentLoaded', function() {
+	    luciTooltip();
+	});
 });

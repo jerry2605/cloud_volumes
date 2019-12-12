@@ -219,18 +219,21 @@
       </div>
       
 
-      <div id="ie-i18n-menu" class="n-property-bar__utils">
-        <ul class="n-property-navigation-bar__utils-list">
-          <li class="n-property-navigation-bar__utils-list-item ie-i18n-container">
-            <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle ie-i18n-link" data-menu-id="n-property-navigation-bar__menu--language-selector">
-              <span class="ie-i18n-lang">English</span>
-              <svg class="ie-i18n-icon-container" class="n-property-bar__logo-svg" aria-labelledby="title">
-                <title>globe</title>
-                <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#globe" class="n-icon-globe n-globe__icon"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
+      <div id="ie-i18n" class="n-property-bar__utils">
+        <div id="ie-i18n-menu">
+          <ul class="n-property-navigation-bar__utils-list">
+            <li class="n-property-navigation-bar__utils-list-item ie-i18n-container">
+              <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle ie-i18n-link" data-menu-id="n-property-navigation-bar__menu--language-selector">
+                <span class="ie-i18n-lang">English</span>
+                <svg class="ie-i18n-icon-container" class="n-property-bar__logo-svg" aria-labelledby="title">
+                  <title>globe</title>
+                  <use xlink:href="/cloud_volumes/us-en/common/svg/sprite.svg#globe" class="n-icon-globe n-globe__icon"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        
       </div>
     </div>
 
@@ -518,7 +521,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-09-10 18:34:13 +0000">09/10/2019</time>
+<time datetime="2019-12-12 16:00:56 +0000">12/12/2019</time>
 
 
 <span>Contributors
@@ -549,6 +552,24 @@
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>NetApp periodically updates Cloud Volumes Service for AWS to bring you new features and enhancements.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="december-2019">December 2019</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes Service now supports NFSv4.1 in addition to NFSv3 and SMB. A volume can be exported over any or all of the supported protocols. NFSv4.1 is a stateful protocol and provides improved file locking, ACLs for better compatibility between Linux and Windows, and many other improvements.</p>
+</li>
+<li>
+<p>Cloud Volumes can be configured so that the .snapshot directory (previous version in Windows) can be hidden or shown.</p>
+</li>
+<li>
+<p>An Overview page is now available per volume that displays QoS settings, data usage, and performance information such as bandwidth, IOPS, and latency.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

@@ -1,5 +1,6 @@
 #search-demo-container {
   display: inline-block;
+  float: left;
   position: relative;
   text-align: left;
 }

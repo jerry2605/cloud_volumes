@@ -6,7 +6,7 @@
   <meta property="og:title" content="Mounting a cloud volume | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/aws/task_mounting_cloud_volumes_for_aws.html" />
-	<meta property="og:description" content="You can mount a cloud volume to your AWS instance. Cloud volumes currently support NFSv3 for Linux and UNIX clients and SMB 2.1, 3.0, and 3.1.1 for Windows c..." />
+	<meta property="og:description" content="You can mount a cloud volume to your AWS instance. Cloud volumes currently support NFSv3 and NFSv4.1 for Linux and UNIX clients and SMB 2.1, 3.0, and 3.1.1 f..." />
   <meta property="og:image" content="https://docs.netapp.com/cloud_volumes/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="You can mount a cloud volume to your AWS instance. Cloud volumes currently support NFSv3 for Linux and UNIX clients and SMB 2.1, 3.0, and 3.1.1 for Windows c...">
-  <meta name="keywords" content=" Cloud Volumes Service for AWS, mount targets, Elastic Compute Cloud, EC2, NFSv3, Linux, UNIX, SMB, Windows">
+  <meta name="description" content="You can mount a cloud volume to your AWS instance. Cloud volumes currently support NFSv3 and NFSv4.1 for Linux and UNIX clients and SMB 2.1, 3.0, and 3.1.1 f...">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, mount targets, Elastic Compute Cloud, EC2, NFSv3, NFSv4.1, Linux, UNIX, SMB, Windows">
   
   
 
@@ -219,18 +219,21 @@
       </div>
       
 
-      <div id="ie-i18n-menu" class="n-property-bar__utils">
-        <ul class="n-property-navigation-bar__utils-list">
-          <li class="n-property-navigation-bar__utils-list-item ie-i18n-container">
-            <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle ie-i18n-link" data-menu-id="n-property-navigation-bar__menu--language-selector">
-              <span class="ie-i18n-lang">English</span>
-              <svg class="ie-i18n-icon-container" class="n-property-bar__logo-svg" aria-labelledby="title">
-                <title>globe</title>
-                <use xlink:href="/cloud_volumes/common/svg/sprite.svg#globe" class="n-icon-globe n-globe__icon"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
+      <div id="ie-i18n" class="n-property-bar__utils">
+        <div id="ie-i18n-menu">
+          <ul class="n-property-navigation-bar__utils-list">
+            <li class="n-property-navigation-bar__utils-list-item ie-i18n-container">
+              <a href="#" class="n-property-navigation-bar__utils-link n-property-navigation-bar__nav-link n-property-navigation-bar__language-selector-toggle ie-i18n-link" data-menu-id="n-property-navigation-bar__menu--language-selector">
+                <span class="ie-i18n-lang">English</span>
+                <svg class="ie-i18n-icon-container" class="n-property-bar__logo-svg" aria-labelledby="title">
+                  <title>globe</title>
+                  <use xlink:href="/cloud_volumes/common/svg/sprite.svg#globe" class="n-icon-globe n-globe__icon"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        
       </div>
     </div>
 
@@ -518,7 +521,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-01-29 20:16:27 +0000">01/29/2019</time>
+<time datetime="2019-12-12 16:00:56 +0000">12/12/2019</time>
 
 
 <span>Contributors
@@ -544,7 +547,7 @@
 </p>
 
 <div class="paragraph lead">
-<p>You can mount a cloud volume to your AWS instance. Cloud volumes currently support NFSv3 for Linux and UNIX clients and SMB 2.1, 3.0, and 3.1.1 for Windows clients.</p>
+<p>You can mount a cloud volume to your AWS instance. Cloud volumes currently support NFSv3 and NFSv4.1 for Linux and UNIX clients, and SMB 2.1, 3.0, and 3.1.1 for Windows clients.</p>
 </div>
 <div class="paragraph">
 <p><strong>Note:</strong> Please use the highlighted protocol/dialect supported by your client.</p>
