@@ -521,7 +521,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-09-23 18:04:35 +0000">09/23/2019</time>
+<time datetime="2019-12-12 17:49:59 +0000">12/12/2019</time>
 
 
 <span>Contributors
@@ -634,9 +634,6 @@
 <p>In the <strong>Volume path</strong> field, specify the path you want to use or accept the automatically generated path.</p>
 </li>
 <li>
-<p>(Optional) In the <strong>Create from snapshot</strong> field, select the name of an existing snapshot that will be used to create a volume.</p>
-</li>
-<li>
 <p>In the <strong>Service level</strong> field, select the level of performance for the volume: <strong>Standard</strong>, <strong>Premium</strong>, or <strong>Extreme</strong>.</p>
 <div class="paragraph">
 <p>See <a href="reference_selecting_service_level_and_quota.html#service-levels">Selecting the service level</a> for details.</p>
@@ -647,6 +644,9 @@
 <div class="paragraph">
 <p>See <a href="reference_selecting_service_level_and_quota.html#allocated-capacity">Selecting the allocated capacity</a> for details.</p>
 </div>
+</li>
+<li>
+<p>In the <strong>NFS version</strong> field, select <strong>NFSv3</strong>, <strong>NFSv4.1</strong>, or <strong>Both</strong> depending on your requirements.</p>
 </li>
 <li>
 <p>If you selected Dual-protocol, you can select the security style in the <strong>Security style</strong> field by selecting <strong>NTFS</strong> or <strong>UNIX</strong> from the drop-down menu.</p>
@@ -664,13 +664,12 @@
 </ul>
 </div>
 </li>
+<li>
+<p>In the <strong>Show snapshot directory</strong> field, keep the default where you can view the Snaphot directory for this volume, or uncheck the box to hide the list of Snapshot copies.<br>
+== Enter network details (one-time setting per AWS region)</p>
+</li>
 </ol>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="enter-network-details-one-time-setting-per-aws-region">Enter network details (one-time setting per AWS region)</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>If this is the first time you have created a cloud volume in this AWS region, the <strong>Network</strong> section is displayed so you can connect your Cloud Volumes account to your AWS account:</p>
 </div>
@@ -704,6 +703,9 @@
 </li>
 <li>
 <p>In the <strong>Access</strong> field, select <strong>Read &amp; Write</strong> or <strong>Read only</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Protocols</strong> field, select the protocol (or protocols if the volume allows both NFSv3 and NFSv4.1 access) used for user access.</p>
 <div class="imageblock">
 <div class="content">
 <img src="./media/diagram_create_volume_4.png" alt="Add export policy rule">
@@ -756,7 +758,7 @@
 </div>
 </li>
 <li>
-<p>In the <strong>NetBIOS</strong> field, enter a NetBIOS name for the SMB server that will be created.</p>
+<p>In the <strong>SMB Server NetBIOS</strong> field, enter a NetBIOS name for the SMB server that will be created.</p>
 </li>
 <li>
 <p>In the <strong>Organizational unit</strong> field, enter "CN=Computers" for connections to your own Windows Active Directory server.</p>
