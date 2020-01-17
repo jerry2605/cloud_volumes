@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>Disabling a snapshot policy | NetApp Cloud Docs</title>
+  <title>Reverting a volume from a snapshot | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="Disabling a snapshot policy | NetApp Cloud Docs" />
+  <meta property="og:title" content="Reverting a volume from a snapshot | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/aws/task_disabling_snapshot_policy.html" />
-	<meta property="og:description" content="If you want to stop snapshots from being created for a short period of time while retaining your snapshot policy settings, you can disable the snapshot policy." />
+	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/aws/task_reverting_volume_to_snapshot.html" />
+	<meta property="og:description" content="You can revert a volume to an earlier point in time from an existing snapshot." />
   <meta property="og:image" content="https://docs.netapp.com/cloud_volumes/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="If you want to stop snapshots from being created for a short period of time while retaining your snapshot policy settings, you can disable the snapshot policy.">
-  <meta name="keywords" content=" Cloud Volumes Service for AWS, snapshot policies">
+  <meta name="description" content="You can revert a volume to an earlier point in time from an existing snapshot.">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, snapshots, restore, revert">
   
   
 
@@ -397,11 +397,11 @@
   
 
   
-    <li class="active"><a href="task_disabling_snapshot_policy.html">Disabling a snapshot policy</a></li>
+    <li><a href="task_disabling_snapshot_policy.html">Disabling a snapshot policy</a></li>
   
 
   
-    <li><a href="task_reverting_volume_to_snapshot.html">Reverting a volume from a snapshot</a></li>
+    <li class="active"><a href="task_reverting_volume_to_snapshot.html">Reverting a volume from a snapshot</a></li>
   
 
   
@@ -520,11 +520,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Disabling a snapshot policy
+  <h1 class="n-doc__component-detail-heading">Reverting a volume from a snapshot
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_disabling_snapshot_policy.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Disabling a snapshot policy](https://docs.netapp.com/us-en/cloud_volumes/aws/task_disabling_snapshot_policy.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_reverting_volume_to_snapshot.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Reverting a volume from a snapshot](https://docs.netapp.com/us-en/cloud_volumes/aws/task_reverting_volume_to_snapshot.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -532,7 +532,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-06-06 12:33:12 +0000">06/06/2019</time>
+<time datetime="2020-01-17 18:53:00 +0000">01/17/2020</time>
 
 
 <span>Contributors
@@ -550,27 +550,22 @@
 </p>
 
 <div class="paragraph lead">
-<p>You can disable a snapshot policy to stop snapshots from being created for a short period of time while retaining your snapshot policy settings.</p>
+<p>You can revert a volume to an earlier point in time from an existing snapshot. When you revert a volume, the content of the snapshot overwrites the existing volume configuration. Any changes that were made to the data in the volume after the snapshot was created are lost.</p>
+</div>
+<div class="paragraph">
+<p>+<br>
+Note that clients do not need to remount the volume after the revert operation.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>From the Volumes page, click the volume name, and then select <strong>Snapshot policy</strong>.</p>
+<p>On the Snapshots page or in the Snapshots tab in Volume details, select the snapshot that you want to revert to, click <strong>Available</strong>, and then select <strong>Revert volume to snapshot</strong>.</p>
 </li>
 <li>
-<p>Click the <strong>Enabled</strong> button to <strong>OFF</strong> to disable snapshots from being created.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/diagram_snapshot_policy_button.png" alt="Snapshot policy Enable button"></span></p>
-</div>
-</li>
-<li>
-<p>Click <strong>Save changes</strong>.</p>
+<p>In the Revert snapshot dialog box, reenter the name of the volume that you want to revert and click <strong>Revert</strong>.</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p>When you want to re-enable the snapshot policy, click the <strong>Enabled</strong> button to <strong>ON</strong> and click <strong>Save changes</strong>.</p>
 </div>
 
         </article>

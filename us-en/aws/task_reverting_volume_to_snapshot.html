@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>Cloud Volumes APIs | NetApp Cloud Docs</title>
+  <title>Reverting a volume from a snapshot | NetApp Cloud Docs</title>
   <meta charset="utf-8">
-  <meta property="og:title" content="Cloud Volumes APIs | NetApp Cloud Docs" />
+  <meta property="og:title" content="Reverting a volume from a snapshot | NetApp Cloud Docs" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/us-en/aws/reference_cloud_volume_apis.html" />
-	<meta property="og:description" content="The Cloud Volumes capabilities that are available through the web UI are also available through RESTful APIs.  The APIs enable you to create and manage cloud..." />
+	<meta property="og:url" content="https://docs.netapp.com/cloud_volumes/us-en/aws/task_reverting_volume_to_snapshot.html" />
+	<meta property="og:description" content="You can revert a volume to an earlier point in time from an existing snapshot." />
   <meta property="og:image" content="https://docs.netapp.com/cloud_volumes/us-en/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="The Cloud Volumes capabilities that are available through the web UI are also available through RESTful APIs.  The APIs enable you to create and manage cloud...">
-  <meta name="keywords" content=" Cloud Volumes Service for AWS, APIs">
+  <meta name="description" content="You can revert a volume to an earlier point in time from an existing snapshot.">
+  <meta name="keywords" content=" Cloud Volumes Service for AWS, snapshots, restore, revert">
   
   
 
@@ -401,7 +401,7 @@
   
 
   
-    <li><a href="task_reverting_volume_to_snapshot.html">Reverting a volume from a snapshot</a></li>
+    <li class="active"><a href="task_reverting_volume_to_snapshot.html">Reverting a volume from a snapshot</a></li>
   
 
   
@@ -478,7 +478,7 @@
   
 
   
-    <li class="active"><a href="reference_cloud_volume_apis.html">Cloud Volumes APIs</a></li>
+    <li><a href="reference_cloud_volume_apis.html">Cloud Volumes APIs</a></li>
   
 
   
@@ -520,11 +520,11 @@
           
 
 <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Cloud Volumes APIs
+  <h1 class="n-doc__component-detail-heading">Reverting a volume from a snapshot
     <span>
       
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/reference_cloud_volume_apis.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Cloud Volumes APIs](https://docs.netapp.com/us-en/cloud_volumes/aws/reference_cloud_volume_apis.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/blob/master/aws/task_reverting_volume_to_snapshot.adoc" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+        <a target="_blank" href="https://github.com/NetAppDocs/cloud_volumes/issues/new?body=Page%3A%20[Reverting a volume from a snapshot](https://docs.netapp.com/us-en/cloud_volumes/aws/task_reverting_volume_to_snapshot.html)" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Request doc changes</a>
       
     </span>
   </h1>
@@ -532,7 +532,7 @@
 
 <p class="page-details">
 
-<time datetime="2019-08-01 14:47:15 +0000">08/01/2019</time>
+<time datetime="2020-01-17 18:53:00 +0000">01/17/2020</time>
 
 
 <span>Contributors
@@ -545,505 +545,27 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" href="https://github.com/netapp-juliec">
-    <img  class="avatar avatar-small"
-          alt="netapp-juliec"
-          width="20" height="20"
-          src="https://avatars0.githubusercontent.com/u/35970435?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
-<p>The Cloud Volumes capabilities that are available through the web UI are also available through RESTful APIs. The APIs enable you to create and manage cloud volumes and develop provisioning scripts and tools.</p>
+<p>You can revert a volume to an earlier point in time from an existing snapshot. When you revert a volume, the content of the snapshot overwrites the existing volume configuration. Any changes that were made to the data in the volume after the snapshot was created are lost.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="finding-the-api-url-api-key-and-secret-key">Finding the API URL, API key, and Secret key</h2>
-<div class="sectionbody">
-<div id="finding_urL_key_secretKey" class="paragraph">
-<p>You need to obtain the Cloud Volumes API URL, API key, and Secret key for running an API call.</p>
+<div class="paragraph">
+<p>+<br>
+Note that clients do not need to remount the volume after the revert operation.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Click <strong>API access</strong> on the storage page or in the drop-down menu under your username.</p>
+<p>On the Snapshots page or in the Snapshots tab in Volume details, select the snapshot that you want to revert to, click <strong>Available</strong>, and then select <strong>Revert volume to snapshot</strong>.</p>
 </li>
 <li>
-<p>Record the Cloud Volumes API URL, API key, and Secret key.</p>
+<p>In the Revert snapshot dialog box, reenter the name of the volume that you want to revert and click <strong>Revert</strong>.</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><a href="media/test.conf">Sample file showing the API URL, API key, and Secret key for an account</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="listing-the-available-apis">Listing the available APIs</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The storage page displays the available APIs that you can use.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>Click <strong>API documentation</strong> on the storage page.</p>
-<div class="paragraph">
-<p>The page lists the available APIs.</p>
-</div>
-</li>
-<li>
-<p>Scroll through the page to see the available APIs.</p>
-<div class="paragraph">
-<p>The APIs are listed by function, for example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>filesystems</code></p>
-</li>
-<li>
-<p><code>mounttargets</code></p>
-</li>
-<li>
-<p><code>storage</code></p>
-</li>
-<li>
-<p><code>snapshots</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>To obtain details and examples of how to use an API call, select the function and click one of the following actions:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>GET</code>: reads</p>
-</li>
-<li>
-<p><code>POST</code>: creates</p>
-</li>
-<li>
-<p><code>PUT</code>: updates or modifies</p>
-</li>
-<li>
-<p><code>DELETE</code>: destroys</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><a href="media/fsid.py">Script to find Cloud Volumes Service fileSystemId by mountpoint</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="using-the-cloud-volumes-apis">Using the Cloud Volumes APIs</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This section shows you how to use the Cloud Volumes APIs.  The examples use curl from a Linux bash shell. You need to replace <code>&lt;api_url&gt;</code>, <code>&lt;api_key&gt;</code>, and <code>&lt;secret_key&gt;</code> with the values you recorded from <a href="#finding_urL_key_secretKey">Finding the API URL, API key, and Secret key</a>.</p>
-</div>
-<div class="sect2">
-<h3 id="syntax">Syntax</h3>
-<div class="paragraph">
-<p><code><strong>curl -s -H  accept:application/json  -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X [GET,POST,PUT,DELETE] &lt;api_url&gt;/v1/&lt;command&gt;</strong></code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="examples">Examples</h3>
-<div class="sect3">
-<h4 id="listing-volumes">Listing volumes</h4>
-<div class="paragraph">
-<p>The following example displays information about all volumes:</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Piping the command through <code>jq</code> improves the formatting of the <code>json</code> output. You might need to install <code>jq</code> on your system.
-</td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems | jq
-[
-{
-	"created": "2018-07-05T18:58:23.000Z",
-	"fileSystemId": "07c9ab6c-b655-a9fe-f904-b9b97ef9baaa",
-	"lifeCycleState": "available",
-	"lifeCycleStateDetails": "Available for use",
-	"name": "SMB",
-	"ownerId": "d38839c3-a37f-4426-9ef9-ae7569e59f1d",
-	"region": "us-west-1",
-	"creationToken": "prickly-bellicose-archimedes",
-	"quotaInBytes": 1000000000000,
-	"serviceLevel": "standard",
-	"snapReserve": 0,
-	"timezone": "PT",
-	"usedBytes": 0
-}
-]</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/list-cv.py">Script to list cloud volumes in an account</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listing-the-details-for-a-specific-volume">Listing the details for a specific volume</h4>
-<div class="paragraph">
-<p>Each volume has an ID called <code>fileSystemId</code>, for example, <code>07c9ab6c-b655-a9fe-f904-b9b97ef9baaa</code>. Including the ID in the API call provides details for the specific volume:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To see the network details for the volume, you can add <code>MountTargets</code> to the <code>GET</code> call:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/MountTargets</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/info-cv.py">Script to display the details of a cloud volume by mountpoint</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="creating-a-volume">Creating a volume</h4>
-<div class="paragraph">
-<p>The following example uses a <code>POST</code> call to create a volume called <code>Test</code>, in region <code>us-west-1</code>, with an <code>allocated capacity</code> of 100 GB and exported using <code>nfsv3</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems -d '
-{
-	"name": "Test",
-	"creationToken": "grahams-test-volume3",
-	"region": "us-west-1",
-	"serviceLevel": "standard",
-	"quotaInBytes": 100000000000,
-	"exportPolicy": {"rules": [{"ruleIndex": 1,"allowedClients": "0.0.0.0/0","unixReadOnly": false,"unixReadWrite": true,"cifs": false,"nfsv3": true,"nfsv4": false}]},
-	"labels": ["test"]
-}'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/create-cv.py">Script to create a cloud volume</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="updating-a-volume">Updating a volume</h4>
-<div class="paragraph">
-<p>The following example uses a <code>PUT</code> call to update a volume called <code>Test</code>, change the service level to <code>extreme</code>, and change the allocated capacity to 500 GB:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X PUT &lt;api_url&gt;/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8 -d '
-{
-	"creationToken": "grahams-test-volume4",
-	"region": "us-west-1",
-	"serviceLevel": "extreme",
-	"quotaInBytes": 500000000000
-}'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/update-cv.py">Script to update a cloud volume</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-volume">Deleting a volume</h4>
-<div class="paragraph">
-<p>The following example uses a <code>DELETE</code> call to delete a volume specified by <code>fileSystemId</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X DELETE &lt;api_url&gt;/v1/FileSystems/08b0578d-465f-6c1a-bf8c-f40098b6451b</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/delete-cv.py">Script to delete a cloud volume by mountpoint</a></p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Use with caution. This API call deletes the volume and all its data.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="creating-a-snapshot">Creating a snapshot</h4>
-<div class="paragraph">
-<p>The following example uses a <code>POST</code> call to create a snapshot called <code>snappy</code> for a specific volume:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots -d '
-{
-	"name": "snappy",
-	"region": "us-west-1"
-}'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/snap-cv.py">Script to create snapshots of a cloud volume by mountpoint</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="creating-a-snapshot-policy">Creating a snapshot policy</h4>
-<div class="paragraph">
-<p>The following example uses a <code>PUT</code> call to create snapshot policies for a specific volume:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X PUT &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/ -d '
-{
-	"creationToken": "nfs1",
-	"region": "us-west-1",
-	"snapshotPolicy": {
-        "hourlySchedule": {
-            "minute": 10,
-            "snapshotsToKeep": 12
-		        },
-        "dailySchedule": {
-            "hour": 10,
-            "minute": 20,
-            "snapshotsToKeep": 20
-		        },
-        "enabled": True,
-        "weeklySchedule": {
-            "day": Monday,Thursday,Saturday,
-            "hour": 12,
-            "minute": 30,
-            "snapshotsToKeep": 4
-				},
-        "monthlySchedule": {
-            "daysOfMonth": 1,14,28,
-            "hour": 00,
-            "minute": 00,
-            "snapshotsToKeep": 12
-		        }
-			}
-		}
-}'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/snapshot-policy.py">Script to create snapshot policies for a cloud volume by mountpoint</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listing-snapshots-for-a-specific-volume">Listing snapshots for a specific volume</h4>
-<div class="paragraph">
-<p>The following example uses a <code>GET</code> call to list the snapshots for a specific volume:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/get-snaps.py">Script to list snapshots of a cloud volume by mountpoint</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="reverting-a-snapshot">Reverting a snapshot</h4>
-<div class="paragraph">
-<p>The following example uses a <code>POST</code> call to revert a volume from a snapshot specified by <code>snapshotId</code> and <code>fileSystemId</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems/cdef5090-aa5e-c2cf-6bba-f77d259a37f8/Revert -d '
-{
-	"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",
-	"fileSystemId": "cdef5090-aa5e-c2cf-6bba-f77d259a37f8",
-	"region": "us-west-1"
-}'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/revert-snap.py">Script to revert to a snapshot of a cloud volume by mountpoint and snapshotId</a></p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Use with caution.  This API call causes any data written after the snapshot to be lost.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="creating-a-new-volume-from-a-snapshot">Creating a new volume from a snapshot</h4>
-<div class="paragraph">
-<p>The following example uses a <code>POST</code> call to create a new volume based on a snapshot of an existing volume, specified by <code>snapshotId</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url&gt;/v1/FileSystems -d '
-{
-	"snapshotId": "e19c5b72-daee-aa22-159d-a24702907fad",
-	"name": "Copy",
-	"creationToken": "perfectly-copied-volume",
-	"region": "us-west-1",
-	"serviceLevel": "extreme"
-}'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/copy-cv.py">Script to copy a cloud volume</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-a-snapshot">Deleting a snapshot</h4>
-<div class="paragraph">
-<p>The following example uses a <code>DELETE</code> call to delete a snapshot specified by <code>snapshotId</code>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X DELETE &lt;api_url&gt;/v1/FileSystems/07c9ab6c-b655-a9fe-f904-b9b97ef9baaa/Snapshots/7b8d84e0-1dc7-fad3-1e6e-1a27968f1e6d</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/delete-snap.py">Script to delete a snapshot of a cloud volume by mountpoint and snapshotId</a></p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Use with caution. This API call deletes the snapshot and all its data.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="joining-a-directory-service">Joining a directory service</h4>
-<div class="paragraph">
-<p>The following example uses a <code>POST</code> call to join a directory service and provides the DNS IP address, domain, the NetBIOS name for the SMB server, the username and password for a directory service admin, and the organizational unit (optional and defaults to CN=Computers).</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X POST &lt;api_url/v1/Storage/ActiveDirectory -d '
-{
-    "DNS": "172.32.2.16",
-    "domain": "cv-pm.local",
-    "netBIOS": "frankfurt",
-    "organizationalUnit": "OU=Cloud Servers,DC=nas-cloud,DC=local",
-    "password": "secret",
-    "region": "eu-central-1",
-    "username": "Administrator"
-}'</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/join-ad.py">Script to join a directory service</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="viewing-directory-service-integration">Viewing directory service integration</h4>
-<div class="paragraph">
-<p>The following example uses a <code>GET</code> call to display the configuration for directory service integration.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X GET &lt;api_url/v1/Storage/ActiveDirectory | jq
-[
-  {
-    "DNS": "172.32.2.16",
-    "UUID": "576a520c-54a2-e3a6-2e3e-89d68bab4035",
-    "createdAt": "2019-07-30T20:08:10.000Z",
-    "domain": "cv-pm.local",
-    "netBIOS": "frankfurt",
-    "organizationalUnit": "OU=Cloud Servers,DC=nas-cloud,DC=local",
-    "password": "****************",
-    "region": "eu-central-1",
-    "status": "in use",
-    "updatedAt": "2019-07-30T20:08:10.000Z",
-    "username": "Administrator"
-  }
-]</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/get-ad.py">Script to view directory service integration</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="unjoining-a-directory-service">Unjoining a directory service</h4>
-<div class="paragraph">
-<p>The following example uses a <code>DELETE</code> call to unjoin a directory service integration. This requires the UUID for the current join, which can be found using the <code>GET</code> call listed above.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-You cannot unjoin a directory service that is in use; status "in use".
-</td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;api_key&gt; -H secret-key:&lt;secret_key&gt; -X DELETE &lt;api_url/v1/Storage/ActiveDirectory/c64ecb4f-da51-be61-f017-b2dda78f7167 |jq
-{
-  "DNS": "172.32.2.16",
-  "UUID": "c64ecb4f-da51-be61-f017-b2dda78f7167",
-  "createdAt": "2019-07-30T19:53:38.000Z",
-  "deletedAt": "2019-07-30T20:06:57.746Z",
-  "domain": "cv-pm.local",
-  "netBIOS": "frankfurt",
-  "organizationalUnit": "OU=Cloud Servers,DC=nas-cloud,DC=local",
-  "password": "****************",
-  "region": "eu-central-1",
-  "status": "deleted",
-  "updatedAt": "2019-07-30T20:06:57.778Z",
-  "username": "Administrator"
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="media/unjoin-ad.py">Script to unjoin a directory service</a></p>
-</div>
-</div>
-</div>
-</div>
 </div>
 
         </article>
