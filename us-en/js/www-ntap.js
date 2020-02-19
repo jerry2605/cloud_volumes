@@ -26,387 +26,9 @@
     return t.d(n, "a", n), n
   }, t.o = function(e, t) {
     return Object.prototype.hasOwnProperty.call(e, t)
-  }, t.p = "", t(t.s = 227)
+  }, t.p = "", t(t.s = 222)
 }({
-  120: function(e, t, n) {
-    "use strict";
-    t.smoothScroll = function() {
-      function e(e) {
-        var t;
-        t = $(window).innerWidth() < 1100 ? 0 : $(".n-property-bar").innerHeight(), $("html,body").animate({
-          scrollTop: e.offset().top - t
-        }, 1e3)
-      }
-      $(window).on("load", function() {
-        if (window.location.hash && !/:/.test(window.location.hash) && !/#\//.test(window.location.hash)) {
-          var t = $(window.location.hash);
-          t.length ? e(t) : console.log("WARNING: " + window.location.hash + " does not exist on this page.")
-        }
-      }), $('[href^="#"]').not('[href="#"], .tabsBar .tab a').click(function(t) {
-        t.preventDefault(), history.pushState ? history.pushState(null, null, $(this).attr("href")) : location.hash = $(this).attr("href"), e($(this.hash))
-      })
-    }
-  },
-  121: function(e, t, n) {
-    "use strict";
-
-    function o() {
-      var e = 2;
-      if ($(window).width() >= 425) {
-        var t = i.width(),
-          n = a.width();
-        if (n > t) 2 == e ? a.children("li:last-child").prev().prependTo(r) : a.children("li:last-child").prependTo(r), o();
-        else {
-          var c = r.children("li:first-child").width();
-          0 !== c && null !== c && n + c < t && r.children("li:first-child").insertBefore(s)
-        }
-        r.children().length > 0 ? (s.show(), e = 2) : (s.hide(), e = 1)
-      }
-    }
-    var i = $("#mainMenu"),
-      a = $("#autoNav"),
-      s = $("#autoNavMore"),
-      r = $("#autoNavMoreList");
-    o(), $(window).resize(o), $(document).ready(function() {
-      $("#autoNavMoreButton").click(function() {
-        $("#autoNavMoreList").toggleClass("visible")
-      }), $("#autoNavMoreButtonMobile").click(function() {
-        $("#autoNavMoreListMobile").toggleClass("visible")
-      })
-    })
-  },
-  122: function(e, t, n) {
-    "use strict";
-    var o = n(225),
-      i = n(226),
-      a = (n(48), n(50)),
-      s = n(138),
-      r = window.location.protocol + "//" + window.location.host,
-      c = (window.location.host, o()),
-      l = e.exports = {
-        init: function() {}
-      }
-  },
-  123: function(e, t, n) {
-    "use strict";
-
-    function o() {
-      if ($(".n-data-table").length && ($(".n-band--tech-specs").length && i(), $("#technical-specifications").length)) {
-        n(139).init()
-      }
-    }
-
-    function i() {
-      var e = $(".n-band--tech-specs .n-data-table td:first")[0].scrollWidth;
-      $(".shift-right").on("click", function(t) {
-        t.preventDefault();
-        var n = $(".n-band--tech-specs .n-data-table").scrollLeft();
-        $(".n-data-table").animate({
-          scrollLeft: n + e
-        }, 800)
-      }), $(".shift-left").on("click", function(t) {
-        t.preventDefault();
-        var n = $(".n-band--tech-specs .n-data-table").scrollLeft();
-        $(".n-data-table").animate({
-          scrollLeft: n - e
-        }, 800)
-      })
-    }
-    e.exports.initializeDataTable = o
-  },
-  128: function(e, t, n) {
-    "use strict";
-    e.exports = {
-      init: function() {
-        $(".n-image-band").length && $(window).on("load scroll resize", function() {
-          $(".n-image-band").not(".n-image-band-animated").each(function() {
-            $(window).scrollTop() + $(window).height() >= $(this).position().top + window.innerHeight / 2 && $(window).scrollTop() < $(this).position().top + window.innerHeight / 2 + $(this).height() && $(this).addClass("n-image-band-animated")
-          })
-        })
-      }
-    }
-  },
-  129: function(e, t, n) {
-    "use strict";
-
-    function o() {
-      function e(e) {
-        e.classList.contains(o) ? e.classList.remove(o) : e.classList.add(o)
-      }
-
-      function t() {
-        e(this)
-      }
-      var n = document.querySelectorAll(".luci-tooltip"),
-        o = "luci-tooltip--visible";
-      n.forEach(function(e) {
-        e.addEventListener("click", t)
-      })
-    }
-    e.exports.luciTooltip = o
-  },
-  130: function(e, t, n) {
-    "use strict";
-    e.exports = {
-      init: function() {
-        function e(e, t) {
-          s = $("#" + e), r = String("techValidateBandIndex-" + e), "undefined" != typeof Storage && n() ? (null === localStorage.getItem(r) ? localStorage.setItem(r, 0) : localStorage.setItem(r, Number(localStorage.getItem(r)) + s.find(".techvalidate-quote-tile").length), o(t, Number(localStorage.getItem(r)))) : (localStorage.clear(), o(a(t), 0))
-        }
-
-        function t(e) {
-          for (var t = e + "=", n = document.cookie.split(";"), o = 0; o < n.length; o++) {
-            var i = $.trim(n[o]);
-            if (0 == i.indexOf(t)) return i.substring(t.length, i.length)
-          }
-          return ""
-        }
-
-        function n() {
-          return !(t("eu-cookie-user-cookie") && t("eu-cookie-user-cookie").startsWith("false") || t("eu-gdpr-cookie") && t("eu-gdpr-cookie").startsWith("false"))
-        }
-
-        function o(e, t) {
-          s.find(".techvalidate-quote-tile").each(function(n) {
-            var o = $(this),
-              a = t + n;
-            a >= e.length && (a %= e.length), o.find(".techvalidate-quote-tile__rating").attr("title", e[a].rating + " stars").html(i(e[a].rating)), o.find(".techvalidate-quote-tile__quote").attr("cite", e[a].tvidURL).find("span").html(e[a].quote), o.find(".techvalidate-quote-tile__source").append(e[a].source), o.find(".techvalidate-quote-tile__citation a").attr("href", e[a].tvidURL).html(e[a].tvidURL.split("/").pop())
-          })
-        }
-
-        function i(e) {
-          for (var t = Number(e.split("/")[0]), n = Number(e.split("/").pop()), o = "", i = 1; i <= n; i++) o += i <= t ? '<svg class="techvalidate-quote-tile__star"><use xlink:href="/us/static/svg/luci/sprite.svg#star-full"></use></svg>' : i - .5 === t ? '<svg class="techvalidate-quote-tile__star"><use xlink:href="/us/static/svg/luci/sprite.svg#star-half"></use></svg>' : '<svg class="techvalidate-quote-tile__star"><use xlink:href="/us/static/svg/luci/sprite.svg#star-empty"></use></svg>';
-          return o
-        }
-
-        function a(e) {
-          for (var t, n, o = e.length; 0 !== o;) n = Math.floor(Math.random() * o), o -= 1, t = e[o], e[o] = e[n], e[n] = t;
-          return e
-        }
-        var s, r;
-        $(document).ready(function() {
-          $(".techvalidate-quote-band").each(function() {
-            var t = $(this).attr("id");
-            e(t, window[t + "_data"])
-          })
-        })
-      }
-    }
-  },
-  131: function(e, t, n) {
-    "use strict";
-
-    function o() {
-      console.log("in inline video partial"), $('video[id^="vjs_video"]').each(function(e, t) {
-        var n = videojs(t.id);
-        i(n, $(t.parentElement))
-      })
-    }
-    var i = n(98).displayVideoOverlays;
-    e.exports.initializeInlineVideoPlayer = o
-  },
-  132: function(e, t, n) {
-    "use strict";
-
-    function o() {
-      var e = {
-          videoId: "5394090523001",
-          accountId: "260701648001",
-          playerId: "H1aPowife",
-          videoNumber: "video-1",
-          muted: !1,
-          autoplay: !1
-        },
-        t = $(this).data("ntapUi").options;
-      e = $.extend(e, t);
-      var n = '<video id="' + e.videoNumber + '" data-video-id="' + e.videoId + '"  data-account="' + e.accountId + '" data-player="' + e.playerId + '" data-embed="default" class="video-js n-video-controller" controls></video>';
-      $("#n-video-placeholder").html(n);
-      var o = "//players.brightcove.net/" + e.accountId + "/" + e.playerId + "_default/index.min.js";
-      "#n-video-placeholder script".length <= 0 && $("#n-video-placeholder").after("<script>" + o + "<\/script>"), $.getScript(o).done(function(t, n) {
-        i(e, JSON.parse(e.muted))
-      }).fail(function(e, t, n) {
-        console.log("loading script failed.")
-      })
-    }
-
-    function i(e, t) {
-      var n = videojs(e.videoNumber);
-      !0 === t && !1 === l && (n.muted(!0), l = !0);
-      var o = $("div#" + e.videoNumber);
-      r(n, o), n.play()
-    }
-
-    function a() {
-      if (void 0 !== c.data("ntapUi").options.autoplay) {
-        if (!0 === JSON.parse(c.data("ntapUi").options.autoplay)) return !0
-      }
-    }
-
-    function s() {
-      if (console.log("in modal video partial"), c.length > 0) {
-        c.on("click", o), c.modaal({
-          fullscreen: !0
-        });
-        !0 === a() && c.click()
-      }
-    }
-    var r = n(98).displayVideoOverlays,
-      c = $('[data-ntap-toggle="video"]'),
-      l = !1;
-    e.exports.initializeModalVideoPlayer = s
-  },
-  133: function(e, t, n) {
-    "use strict";
-    var o, i, a = n(51),
-      s = {},
-      r = ["C_Company", "C_State_Prov", "C_Zip_Postal", "C_Country", "C_BusPhone", "C_Firstname", "C_Lastname", "C_EmailAddress"],
-      c = "COMPLETE";
-    s.init = function() {
-      return true;
-    }, $(document).ready(function() {
-      s.init()
-    })
-  },
-  136: function(e, t, n) {
-    "use strict";
-    Array.from || (Array.from = function() {
-      var e = Object.prototype.toString,
-        t = function(t) {
-          return "function" == typeof t || "[object Function]" === e.call(t)
-        },
-        n = function(e) {
-          var t = Number(e);
-          return isNaN(t) ? 0 : 0 !== t && isFinite(t) ? (t > 0 ? 1 : -1) * Math.floor(Math.abs(t)) : t
-        },
-        o = Math.pow(2, 53) - 1,
-        i = function(e) {
-          var t = n(e);
-          return Math.min(Math.max(t, 0), o)
-        };
-      return function(e) {
-        var n = this,
-          o = Object(e);
-        if (null == e) throw new TypeError("Array.from requires an array-like object - not null or undefined");
-        var a, s = arguments.length > 1 ? arguments[1] : void 0;
-        if (void 0 !== s) {
-          if (!t(s)) throw new TypeError("Array.from: when provided, the second argument must be a function");
-          arguments.length > 2 && (a = arguments[2])
-        }
-        for (var r, c = i(o.length), l = t(n) ? Object(new n(c)) : new Array(c), u = 0; u < c;) r = o[u], l[u] = s ? void 0 === a ? s(r, u) : s.call(a, r, u) : r, u += 1;
-        return l.length = c, l
-      }
-    }())
-  },
-  137: function(e, t, n) {
-    "use strict";
-    var o = function() {
-      document.addEventListener("DOMContentLoaded", function() {
-        var e = void 0,
-          t = {
-            root: null,
-            rootMargin: "500px"
-          };
-        if ("IntersectionObserver" in window) {
-          e = document.querySelectorAll(".lazy");
-          var n = new IntersectionObserver(function(e, t) {
-            e.forEach(function(e) {
-              if (e.isIntersecting) {
-                var t = e.target;
-                t.src = t.dataset.src, setTimeout(function() {
-                  t.classList.remove("lazy")
-                }, 200), n.unobserve(t)
-              }
-            })
-          }, t);
-          e.forEach(function(e) {
-            n.observe(e)
-          })
-        } else {
-          var o, i = function t() {
-            o && clearTimeout(o), o = setTimeout(function() {
-              var n = window.pageYOffset;
-              e.forEach(function(e) {
-                e.offsetTop < window.innerHeight + n && (e.src = e.dataset.src, e.classList.remove("lazy"))
-              }), 0 == e.length && (document.removeEventListener("scroll", t), window.removeEventListener("resize", t), window.removeEventListener("orientationChange", t))
-            }, 20)
-          };
-          e = document.querySelectorAll(".lazy"), document.addEventListener("scroll", i), window.addEventListener("resize", i), window.addEventListener("orientationChange", i)
-        }
-      })
-    };
-    e.exports.lazyLoad = o
-  },
-  138: function(e, t, n) {
-    "use strict";
-
-    function o() {
-      function e() {
-        a.addClass(s), r.addClass(c)
-      }
-
-      function t() {
-        l.toggleClass(d)
-      }
-
-      function n() {
-        a.hasClass(s) && (r.removeClass(c), l.removeClass(d), a.removeClass(s))
-      }
-
-      function o() {
-        r.removeClass(c), a.removeClass(s)
-      }
-
-      function i() {
-        r.removeClass(c), a.removeClass(s)
-      }
-      var a = $(".n-contact-module"),
-        s = "n-contact-module--active",
-        r = $(".n-contact-module__chat-bubble"),
-        c = "n-contact-module__chat-bubble--hidden",
-        l = ($(".n-contact-module__minimize"), $(".n-contact-module__menu")),
-        u = $(".n-contact-module__menu-toggle"),
-        d = "n-contact-module__menu--active",
-        m = ($(".n-contact-module__menu-link--minimize"), $(".n-contact-module__menu-link--close, .n-contact-module__menu-link--minimize, .n-contact-module__minimize")),
-        f = $("#chatOnlineLink"),
-        p = $("#cloud_intercom_sticky"),
-        h = $("#dynamicLiveChatLink");
-      r.on("click", function(t) {
-        t.preventDefault(), e()
-      }), u.on("click", function(e) {
-        e.preventDefault(), t()
-      }), m.on("click", function(e) {
-        e.preventDefault(), n()
-      }), f.on("click", function(e) {
-        e.preventDefault(), o()
-      }), h.on("click", function(e) {
-        e.preventDefault(), o()
-      }), p.on("click", function(e) {
-        e.preventDefault(), i()
-      })
-    }
-    e.exports.initializeContact = o
-  },
-  139: function(e, t, n) {
-    "use strict";
-    e.exports = {
-      init: function() {
-        window.printable = function() {
-          var e = $("#technical-specifications").parent().html();
-          0 === $(".printFrame").length && $("<iframe>", {
-            name: "printFrame",
-            class: "printFrame",
-            style: "width:0; height:0;"
-          }).appendTo("body");
-          var t = setInterval(function() {
-            $(".printFrame").length > 0 && ($(".printFrame").contents().find("body").html(e), $(".printFrame").contents().find(".n-data-table__row--collapsed .n-content-wrap-collapsed").addClass("n-content-wrap-expanded"), $(".printFrame").contents().find("table.n-data-table--sticky ").css("display", "none"), $(".printFrame").contents().find(".n-data-table__controls .n-data-table__controls").css("display", "none"), $(".printFrame").contents().find("head").append('<link href="https://www.netapp.com/us/static/css/unique/tnt/tech-specs-print.css" media="print" rel="stylesheet" type="text/css">'), clearInterval(t))
-          }, 100);
-          setTimeout(function() {
-            window.frames.printFrame.focus(), window.frames.printFrame.print()
-          }, 1e3)
-        }
-      }
-    }
-  },
-  14: function(e, t, n) {
+  10: function(e, t, n) {
     "use strict";
     e.exports = {
       aimAwarenessContainer: $(".aim-awareness-container"),
@@ -527,7 +149,386 @@
       }
     }
   },
-  225: function(e, t, n) {
+  115: function(e, t, n) {
+    "use strict";
+    t.smoothScroll = function() {
+      function e(e) {
+        var t;
+        t = $(window).innerWidth() < 1100 ? 0 : $(".n-property-bar").innerHeight(), $("html,body").animate({
+          scrollTop: e.offset().top - t
+        }, 1e3)
+      }
+      $(window).on("load", function() {
+        if (window.location.hash && !/:/.test(window.location.hash) && !/#\//.test(window.location.hash)) {
+          var t = $(window.location.hash);
+          t.length ? e(t) : console.log("WARNING: " + window.location.hash + " does not exist on this page.")
+        }
+      }), $('[href^="#"]').not('[href="#"], .tabsBar .tab a').click(function(t) {
+        t.preventDefault(), history.pushState ? history.pushState(null, null, $(this).attr("href")) : location.hash = $(this).attr("href"), e($(this.hash))
+      })
+    }
+  },
+  116: function(e, t, n) {
+    "use strict";
+
+    function o() {
+      var e = $(".n-anchor-nav__list-more-button"),
+        t = $("li.n-anchor-nav__list-item:nth-last-child(2)");
+      t.is(":visible") ? (e.css("display", "none"), t.css("border-right", "none")) : (e.css("display", "block"), t.css("border-right", "1px solid #d8d8d8;"))
+    }
+    $("document").ready(function() {
+      $("a.n-anchor-nav__list-more-button").click(function() {
+        $(this).next(".dropdown").slideToggle("fast")
+      }), $(document).on("click", function(e) {
+        $(".dropdown-toggle").is(e.target) || $(".dropdown-toggle").has(e.target).length || $(".dropdown").slideUp("fast")
+      }), o(), $(window).resize(o)
+    })
+  },
+  117: function(e, t, n) {
+    "use strict";
+    var o = n(220),
+      i = n(221),
+      a = (n(41), n(28)),
+      s = n(133),
+      r = window.location.protocol + "//" + window.location.host,
+      c = (window.location.host, o()),
+      l = e.exports = {
+        init: function() {}
+      }
+  },
+  118: function(e, t, n) {
+    "use strict";
+
+    function o() {
+      var e, t = document.getElementsByClassName("n-card_expcoll n-card"),
+        n = document.getElementById("expandall");
+      if (n.classList.contains("unclicked"))
+        for (n.classList.remove("unclicked"), n.classList.add("clicked"), e = 0; e < t.length; e++) 1 != t[e].classList.contains("active") && (t[e].classList.add("active"), t[e].nextElementSibling.style.display = "block");
+      else
+        for (n.classList.remove("clicked"), n.classList.add("unclicked"), e = 0; e < t.length; e++) 1 == t[e].classList.contains("active") && (t[e].classList.remove("active"), t[e].nextElementSibling.style.display = "none")
+    }
+    var i, a = document.getElementsByClassName("n-card_expcoll n-card");
+    for (i = 0; i < a.length; i++) a[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var e = this.nextElementSibling;
+      "block" === e.style.display ? e.style.display = "none" : e.style.display = "block"
+    });
+    var s = document.getElementById("expandall");
+    $(document).ready(function() {
+      if(s != null) {
+        s.addEventListener("click", o, !1);
+      }
+    })
+  },
+  123: function(e, t, n) {
+    "use strict";
+    e.exports = {
+      init: function() {
+        $(".n-image-band").length && $(window).on("load scroll resize", function() {
+          $(".n-image-band").not(".n-image-band-animated").each(function() {
+            $(window).scrollTop() + $(window).height() >= $(this).position().top + window.innerHeight / 2 && $(window).scrollTop() < $(this).position().top + window.innerHeight / 2 + $(this).height() && $(this).addClass("n-image-band-animated")
+          })
+        })
+      }
+    }
+  },
+  124: function(e, t, n) {
+    "use strict";
+
+    function o() {
+      function e(e) {
+        e.classList.contains(o) ? e.classList.remove(o) : e.classList.add(o)
+      }
+
+      function t() {
+        e(this)
+      }
+      var n = document.querySelectorAll(".luci-tooltip"),
+        o = "luci-tooltip--visible";
+      n.forEach(function(e) {
+        e.addEventListener("click", t)
+      })
+    }
+    e.exports.luciTooltip = o
+  },
+  125: function(e, t, n) {
+    "use strict";
+    e.exports = {
+      init: function() {
+        function e(e, t) {
+          s = $("#" + e), r = String("techValidateBandIndex-" + e), "undefined" != typeof Storage && n() ? (null === localStorage.getItem(r) ? localStorage.setItem(r, 0) : localStorage.setItem(r, Number(localStorage.getItem(r)) + s.find(".techvalidate-quote-tile").length), o(t, Number(localStorage.getItem(r)))) : (localStorage.clear(), o(a(t), 0))
+        }
+
+        function t(e) {
+          for (var t = e + "=", n = document.cookie.split(";"), o = 0; o < n.length; o++) {
+            var i = $.trim(n[o]);
+            if (0 == i.indexOf(t)) return i.substring(t.length, i.length)
+          }
+          return ""
+        }
+
+        function n() {
+          return !t("gdpr-cookie") || !t("gdpr-cookie").startsWith("false")
+        }
+
+        function o(e, t) {
+          s.find(".techvalidate-quote-tile").each(function(n) {
+            var o = $(this),
+              a = t + n;
+            a >= e.length && (a %= e.length), o.find(".techvalidate-quote-tile__rating").attr("title", e[a].rating + " stars").html(i(e[a].rating)), o.find(".techvalidate-quote-tile__quote").attr("cite", e[a].tvidURL).find("span").html(e[a].quote), o.find(".techvalidate-quote-tile__source").append(e[a].source), o.find(".techvalidate-quote-tile__citation a").attr("href", e[a].tvidURL).html(e[a].tvidURL.split("/").pop())
+          })
+        }
+
+        function i(e) {
+          for (var t = Number(e.split("/")[0]), n = Number(e.split("/").pop()), o = "", i = 1; i <= n; i++) o += i <= t ? '<svg class="techvalidate-quote-tile__star"><use xlink:href="/us/static/svg/luci/sprite.svg#star-full"></use></svg>' : i - .5 === t ? '<svg class="techvalidate-quote-tile__star"><use xlink:href="/us/static/svg/luci/sprite.svg#star-half"></use></svg>' : '<svg class="techvalidate-quote-tile__star"><use xlink:href="/us/static/svg/luci/sprite.svg#star-empty"></use></svg>';
+          return o
+        }
+
+        function a(e) {
+          for (var t, n, o = e.length; 0 !== o;) n = Math.floor(Math.random() * o), o -= 1, t = e[o], e[o] = e[n], e[n] = t;
+          return e
+        }
+        var s, r;
+        $(document).ready(function() {
+          $(".techvalidate-quote-band").each(function() {
+            var t = $(this).attr("id");
+            e(t, window[t + "_data"])
+          })
+        })
+      }
+    }
+  },
+  126: function(e, t, n) {
+    "use strict";
+
+    function o() {
+      console.log("in inline video partial"), $('video[id^="vjs_video"]').each(function(e, t) {
+        var n = videojs(t.id);
+        i(n, $(t.parentElement))
+      })
+    }
+    var i = n(90).displayVideoOverlays;
+    e.exports.initializeInlineVideoPlayer = o
+  },
+  127: function(e, t, n) {
+    "use strict";
+
+    function o() {
+      var e = {
+          videoId: "5394090523001",
+          accountId: "260701648001",
+          playerId: "H1aPowife",
+          videoNumber: "video-1",
+          muted: !1,
+          autoplay: !1
+        },
+        t = $(this).data("ntapUi").options;
+      e = $.extend(e, t);
+      var n = '<video id="' + e.videoNumber + '" data-video-id="' + e.videoId + '"  data-account="' + e.accountId + '" data-player="' + e.playerId + '" data-embed="default" class="video-js n-video-controller" controls></video>';
+      $("#n-video-placeholder").html(n);
+      var o = "//players.brightcove.net/" + e.accountId + "/" + e.playerId + "_default/index.min.js";
+      "#n-video-placeholder script".length <= 0 && $("#n-video-placeholder").after("<script>" + o + "<\/script>"), $.getScript(o).done(function(t, n) {
+        i(e, JSON.parse(e.muted))
+      }).fail(function(e, t, n) {
+        console.log("loading script failed.")
+      })
+    }
+
+    function i(e, t) {
+      var n = videojs(e.videoNumber);
+      !0 === t && !1 === l && (n.muted(!0), l = !0);
+      var o = $("div#" + e.videoNumber);
+      r(n, o), n.play()
+    }
+
+    function a() {
+      if (void 0 !== c.data("ntapUi").options.autoplay) {
+        if (!0 === JSON.parse(c.data("ntapUi").options.autoplay)) return !0
+      }
+    }
+
+    function s() {
+      if (console.log("in modal video partial"), c.length > 0) {
+        c.on("click", o), c.modaal({
+          fullscreen: !0
+        });
+        !0 === a() && c.click()
+      }
+    }
+    var r = n(90).displayVideoOverlays,
+      c = $('[data-ntap-toggle="video"]'),
+      l = !1;
+    e.exports.initializeModalVideoPlayer = s
+  },
+  128: function(e, t, n) {
+    "use strict";
+    var o, i, a = n(43),
+      s = n(28),
+      r = {},
+      c = ["C_Company", "C_State_Prov", "C_Zip_Postal", "C_Country", "C_BusPhone", "C_Firstname", "C_Lastname", "C_EmailAddress"],
+      l = "COMPLETE";
+    r.init = function() {
+      var e, t, n;
+      $(".n-webinar__card a[data-ntap-form]").click(function(o) {
+        e = $(this), t = e.data("ntapForm"), n = t.assetURL, r.handleWebinarClick(o, e, t, n)
+      }), $("#ntap-webinar__form .modal-form-close").click(r.hideWebinarForm), $("#ntap-webinar__form button[name='featuredAction']").click(function() {
+        r.handleWebinarFormSubmit(e, n)
+      })
+    }, r.handleWebinarClick = function(e, t, n, o) {
+      e.preventDefault();
+      var a = n.formName;
+      return r.checkUserStatus(), "" === a ? r.showAsset(t, o) : "KNOWN" === i && "COMPLETE" === l || s.getCookie("webinaruser") ? r.blindFormSubmit(t, n, o) : "UNKNOWN" !== i && "INCOMPLETE" !== l || r.showWebinarForm(t, n), !1
+    }, r.handleWebinarFormSubmit = function(e, t) {
+      r.useremail = $("#ntap-webinar__form input[name='C_EmailAddress']").val();
+      var n = setInterval(function() {
+        $("#ntap-webinar__form #embeddedThanks").is(":visible") && (clearInterval(n), r.hideWebinarForm(), s.createCookie("webinaruser", r.useremail), r.showAsset(e, t))
+      }, 500)
+    }, r.checkUserStatus = function() {
+      var e = c.length;
+      if (!0 === window.FirstLookup && (i = "UNKNOWN", l = "INCOMPLETE"), !1 === window.FirstLookup && (i = "KNOWN", GetElqContentPersonalizationValue && GetElqContentPersonalizationValue("C_EmailAddress")))
+        for (var t = 0; t < e; t++) "" !== (o = GetElqContentPersonalizationValue(c[t])) && void 0 != o || (l = "INCOMPLETE")
+    }, r.showAsset = function(e, t) {
+      r.hideWebinarForm(), t && "modaal-video" !== t ? window.open(t) : t && "modaal-video" === t && e.next(".n-video-link").click()
+    }, r.updateFormParams = function(e, t, n) {
+      var o, i = t.campaignID;
+      e.find(".n-card__title").length > 0 && (o = e.find(".n-card__title").text());
+      var s = a("cid");
+      s && void 0 !== s && (i = s), $("#" + n + " input[name='asset']").attr("value", o), $("#" + n + " input[name='elqFormName']").attr("value", t.formName), $("#" + n + " input[id='C_SiebelOnDemandLastCampaignID']").attr("value", i)
+    }, r.showWebinarForm = function(e, t) {
+      var n = t.formName;
+      r.updateFormParams(e, t, n), $("#ntap-webinar__form").addClass("load"), $("body").addClass("modal-no-scroll")
+    }, r.blindFormSubmit = function(e, t, n) {
+      var o, i = "ntap-webinar__form-blind",
+        a = $("#" + i + " input[id='C_EmailAddress']"),
+        c = $("#" + i + " input[id='Tops']"),
+        l = Math.floor(1e3 + 9e3 * Math.random()) + "";
+      !1 === window.FirstLookup && GetElqContentPersonalizationValue && (o = GetElqContentPersonalizationValue("C_EmailAddress")), r.updateFormParams(e, t, i), s.getCookie("webinaruser") ? a.attr("value", s.getCookie("webinaruser")) : o && a.attr("value", o), c.attr("value", l), $("#" + i).submit(), r.showAsset(e, n)
+    }, r.hideWebinarForm = function() {
+      $("#ntap-webinar__form").removeClass("load"), $("body").removeClass("modal-no-scroll")
+    }, $(document).ready(function() {
+      r.init()
+    })
+  },
+  131: function(e, t, n) {
+    "use strict";
+    Array.from || (Array.from = function() {
+      var e = Object.prototype.toString,
+        t = function(t) {
+          return "function" == typeof t || "[object Function]" === e.call(t)
+        },
+        n = function(e) {
+          var t = Number(e);
+          return isNaN(t) ? 0 : 0 !== t && isFinite(t) ? (t > 0 ? 1 : -1) * Math.floor(Math.abs(t)) : t
+        },
+        o = Math.pow(2, 53) - 1,
+        i = function(e) {
+          var t = n(e);
+          return Math.min(Math.max(t, 0), o)
+        };
+      return function(e) {
+        var n = this,
+          o = Object(e);
+        if (null == e) throw new TypeError("Array.from requires an array-like object - not null or undefined");
+        var a, s = arguments.length > 1 ? arguments[1] : void 0;
+        if (void 0 !== s) {
+          if (!t(s)) throw new TypeError("Array.from: when provided, the second argument must be a function");
+          arguments.length > 2 && (a = arguments[2])
+        }
+        for (var r, c = i(o.length), l = t(n) ? Object(new n(c)) : new Array(c), u = 0; u < c;) r = o[u], l[u] = s ? void 0 === a ? s(r, u) : s.call(a, r, u) : r, u += 1;
+        return l.length = c, l
+      }
+    }())
+  },
+  132: function(e, t, n) {
+    "use strict";
+    var o = function() {
+      document.addEventListener("DOMContentLoaded", function() {
+        var e = void 0,
+          t = {
+            root: null,
+            rootMargin: "500px"
+          };
+        if ("IntersectionObserver" in window) {
+          e = document.querySelectorAll(".lazy");
+          var n = new IntersectionObserver(function(e, t) {
+            e.forEach(function(e) {
+              if (e.isIntersecting) {
+                var t = e.target;
+                t.src = t.dataset.src, setTimeout(function() {
+                  t.classList.remove("lazy")
+                }, 200), n.unobserve(t)
+              }
+            })
+          }, t);
+          e.forEach(function(e) {
+            n.observe(e)
+          })
+        } else {
+          var o, i = function t() {
+            o && clearTimeout(o), o = setTimeout(function() {
+              var n = window.pageYOffset;
+              e.forEach(function(e) {
+                e.offsetTop < window.innerHeight + n && (e.src = e.dataset.src, e.classList.remove("lazy"))
+              }), 0 == e.length && (document.removeEventListener("scroll", t), window.removeEventListener("resize", t), window.removeEventListener("orientationChange", t))
+            }, 20)
+          };
+          e = document.querySelectorAll(".lazy"), document.addEventListener("scroll", i), window.addEventListener("resize", i), window.addEventListener("orientationChange", i)
+        }
+      })
+    };
+    e.exports.lazyLoad = o
+  },
+  133: function(e, t, n) {
+    "use strict";
+
+    function o() {
+      function e() {
+        a.addClass(s), r.addClass(c)
+      }
+
+      function t() {
+        l.toggleClass(d)
+      }
+
+      function n() {
+        a.hasClass(s) && (r.removeClass(c), l.removeClass(d), a.removeClass(s))
+      }
+
+      function o() {
+        r.removeClass(c), a.removeClass(s)
+      }
+
+      function i() {
+        r.removeClass(c), a.removeClass(s)
+      }
+      var a = $(".n-contact-module"),
+        s = "n-contact-module--active",
+        r = $(".n-contact-module__chat-bubble"),
+        c = "n-contact-module__chat-bubble--hidden",
+        l = ($(".n-contact-module__minimize"), $(".n-contact-module__menu")),
+        u = $(".n-contact-module__menu-toggle"),
+        d = "n-contact-module__menu--active",
+        m = ($(".n-contact-module__menu-link--minimize"), $(".n-contact-module__menu-link--close, .n-contact-module__menu-link--minimize, .n-contact-module__minimize")),
+        f = $("#chatOnlineLink"),
+        p = $("#cloud_intercom_sticky"),
+        v = $("#dynamicLiveChatLink");
+      r.on("click", function(t) {
+        t.preventDefault(), e()
+      }), u.on("click", function(e) {
+        e.preventDefault(), t()
+      }), m.on("click", function(e) {
+        e.preventDefault(), n()
+      }), f.on("click", function(e) {
+        e.preventDefault(), o()
+      }), v.on("click", function(e) {
+        e.preventDefault(), o()
+      }), p.on("click", function(e) {
+        e.preventDefault(), i()
+      })
+    }
+    e.exports.initializeContact = o
+  },
+  220: function(e, t, n) {
     "use strict";
     e.exports = function() {
       var e = "us",
@@ -592,45 +593,68 @@
       return e
     }
   },
-  226: function(e, t, n) {
+  221: function(e, t, n) {
     "use strict";
     e.exports = function() {
-      var e = "undefined" != typeof __ntap_dmdbase;
-      return true;
+      var e = "undefined" != typeof __ntap_dmdbase,
+        t = void 0 !== window.cookieLaw;
+      return console.log("demandBaseExists:" + e), console.log("cookieLawExists:", t), e && void 0 !== __ntap_dmdbase.registry_country_code ? (console.log("option 1:" + __ntap_dmdbase.registry_country_code), __ntap_dmdbase.registry_country_code.toLowerCase()) : e && void 0 !== __ntap_dmdbase.country ? (console.log("option 2:" + __ntap_dmdbase.country), __ntap_dmdbase.country.toLowerCase()) : t && void 0 !== cookieLaw.euCountry ? (console.log("option 3:" + cookieLaw.euCountry), cookieLaw.euCountry.toLowerCase()) : (console.log("option 4"), "us")
     }
   },
-  227: function(e, t, n) {
+  222: function(e, t, n) {
     "use strict";
-    n(49);
-    var o = n(136);
+    n(42);
+    var o = n(131);
     ! function(e) {
       e && e.__esModule
     }(o);
-    (0, n(120).smoothScroll)();
-    n(35).initializeAccordion(), n(37).initializePropertyNavBar(), n(36).initializeOffCanvasMenu(), n(14).initializeMenu(), n(38).initializePropertyBarSearch(), n(40).init(), n(121), n(133);
+    (0, n(115).smoothScroll)();
+    n(29).initializeAccordion(), n(31).initializePropertyNavBar(), n(30).initializeOffCanvasMenu(), n(10).initializeMenu(), n(32).initializePropertyBarSearch(), n(34).init(), n(116), n(128), n(118);
     if (-1 === window.location.href.indexOf("/data-visionary/index-exp-c")) {
-      n(132).initializeModalVideoPlayer()
+      n(127).initializeModalVideoPlayer()
     }
     if ($('video[id*="vjs_video"]').length > 0) {
-      n(131).initializeInlineVideoPlayer()
+      n(126).initializeInlineVideoPlayer()
     }
-    n(128).init(), n(130).init();
+    n(123).init(), n(125).init();
     if (-1 == window.location.host.indexOf("stage.netapp") && !$(".n-contact-sales.n-pull-right").length) {
-      n(122).init()
+      n(117).init()
     }
     if ($("#luci-tooltip").length) {
-      n(129).luciTooltip()
+      n(124).luciTooltip()
     }
     if ($(".lazy").length) {
-      n(137).lazyLoad()
+      n(132).lazyLoad()
     }
-    n(123).initializeDataTable();
-    $(document).ready(function() {
-      var e = document.location.href;
-      sessionStorage.setItem("lastPage", e)
-    })
   },
-  35: function(e, t, n) {
+  28: function(e, t, n) {
+    "use strict";
+
+    function o(e, t, n) {
+      var o;
+      if (n) {
+        var i = new Date;
+        i.setTime(i.getTime() + 24 * n * 60 * 60 * 1e3), o = "; expires=" + i.toUTCString()
+      } else o = "";
+      document.cookie = e + "=" + t + o + "; path=/"
+    }
+
+    function i(e) {
+      var t = "; " + document.cookie,
+        n = t.split("; " + e + "=");
+      return 2 == n.length ? n.pop().split(";").shift() : ""
+    }
+
+    function a(e) {
+      o(e, "", -1)
+    }
+    e.exports = {
+      createCookie: o,
+      getCookie: i,
+      deleteCookie: a
+    }
+  },
+  29: function(e, t, n) {
     "use strict";
 
     function o() {
@@ -652,7 +676,7 @@
     function a() {
       void 0 !== r && o()
     }
-    var s = n(48),
+    var s = n(41),
       r = s.getQueryStrings().product;
     $(".n-accordion__checkbox").on("click", function() {
       console.log("clicked");
@@ -660,7 +684,7 @@
       !1 === e && i($(this)), console.log(e)
     }), e.exports.initializeAccordion = a
   },
-  36: function(e, t, n) {
+  30: function(e, t, n) {
     "use strict";
 
     function o(e, t) {
@@ -681,7 +705,7 @@
     }
 
     function s() {
-      o(f, h)
+      o(f, v)
     }
 
     function r(e) {
@@ -699,10 +723,10 @@
       m = $(".n-top-hat__cross-property-nav").children(),
       f = $(".n-property-navigation-bar__nav-list"),
       p = ".n-off-canvas__cross-property-nav",
-      h = ".n-off-canvas__property-nav";
+      v = ".n-off-canvas__property-nav";
     e.exports.initializeOffCanvasMenu = c
   },
-  37: function(e, t, n) {
+  31: function(e, t, n) {
     "use strict";
 
     function o(e, t) {
@@ -743,10 +767,10 @@
       d = $(".n-menu"),
       m = (d.find(".n-menu__link"), "n-menu--is-active"),
       f = ".n-menu--mega." + m,
-      p = ($(".n-property-navigation-bar__utils"), $(".n-property-bar__toolbar"), n(14), "ontouchstart" in document.documentElement);
+      p = ($(".n-property-navigation-bar__utils"), $(".n-property-bar__toolbar"), n(10), "ontouchstart" in document.documentElement);
     e.exports.initializePropertyNavBar = s
   },
-  38: function(e, t, n) {
+  32: function(e, t, n) {
     "use strict";
 
     function o() {
@@ -807,7 +831,7 @@
       f = "visually-hidden-btn";
     e.exports.initializePropertyBarSearch = o
   },
-  40: function(e, t, n) {
+  34: function(e, t, n) {
     "use strict";
     e.exports = {
       init: function() {
@@ -821,7 +845,7 @@
       }
     }
   },
-  48: function(e, t, n) {
+  41: function(e, t, n) {
     "use strict";
 
     function o() {
@@ -830,47 +854,20 @@
     }
     e.exports.getQueryStrings = o
   },
-  49: function(e, t, n) {
+  42: function(e, t, n) {
     "use strict";
     String.prototype.startsWith || (String.prototype.startsWith = function(e, t) {
       return t = t || 0, this.substr(t, e.length) === e
     })
   },
-  50: function(e, t, n) {
-    "use strict";
-
-    function o(e, t, n) {
-      var o;
-      if (n) {
-        var i = new Date;
-        i.setTime(i.getTime() + 24 * n * 60 * 60 * 1e3), o = "; expires=" + i.toUTCString()
-      } else o = "";
-      document.cookie = e + "=" + t + o + "; path=/"
-    }
-
-    function i(e) {
-      var t = "; " + document.cookie,
-        n = t.split("; " + e + "=");
-      return 2 == n.length ? n.pop().split(";").shift() : ""
-    }
-
-    function a(e) {
-      o(e, "", -1)
-    }
-    e.exports = {
-      createCookie: o,
-      getCookie: i,
-      deleteCookie: a
-    }
-  },
-  51: function(e, t, n) {
+  43: function(e, t, n) {
     "use strict";
     e.exports = function(e) {
       for (var t, n = [], o = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&"), i = 0; i < o.length; i++) t = o[i].split("="), n.push(t[0]), n[t[0]] = t[1];
       return n[e]
     }
   },
-  98: function(e, t, n) {
+  90: function(e, t, n) {
     "use strict";
 
     function o(e, t) {

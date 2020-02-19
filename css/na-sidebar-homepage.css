@@ -13,13 +13,36 @@ h2[id].n-property-bar__property-name {
 }
 
 /* NetApp Sidebar Overrides */
-ul#mysidebar {
-    width: 265px;
-    border-radius:0px;
-    background: inherit;
-    padding-top: 0px;
-    box-shadow: 2px 0px 1px rgba(0,0,0,.08)
+@media (max-width: 990px) {
+    #mysidebar {
+        position: relative;
+    }
 }
+
+@media (min-width: 1000px) {
+
+    ul#mysidebar {
+        width: 265px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    ul#mysidebar {
+        max-width: 100%;
+    }
+}
+
+#mysidebar .nav ul {
+    background: #F7F7F7;
+}
+
+ul#mysidebar {
+    border-radius:0px;
+    background: #F7F7F7;
+    padding-top: 15px;
+}
+
 
 .nav, .nav ul, .nav li {
     list-style: none;
@@ -72,7 +95,7 @@ ul#mysidebar {
     /* background-color: #8D8D8D; */ /* Dark Grey */
     color: #0067C5; /* NetApp Blue */
     font-weight: bold;
-    background: inherit;
+    background: #F7F7F7;
     font-size: 14px;
 }
 
@@ -88,7 +111,7 @@ ul#mysidebar {
     font-size: 13px;
     line-height: 16px;
     padding: 7px 15px;
-    background: inherit;
+    background: #F7F7F7;
 }
 
 .nav > li > a {
@@ -111,12 +134,12 @@ ul#mysidebar {
 .nav li a:hover {
     /*background-color: #8D8D8D;*/
     font-weight: normal;
-    background: inherit;
+    background: #F7F7F7;
     color: #0067C5; /* NetApp Blue */
 }
 
 .nav ul li a {
-    background: inherit;
+    background: #F7F7F7;
     padding-left:30px;
     border-top: 0px;
 }

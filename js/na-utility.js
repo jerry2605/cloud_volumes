@@ -11,5 +11,11 @@ $(document).ready(function() {
       && $('#n-property-navigation-bar__menu--language-selector').is(":visible")) {
       $('#n-property-navigation-bar__menu--language-selector').hide();
     }
+
+    if($("#page").hasClass("n-off-canvas-menu--open")) {
+      $('#search-demo-container').hide();
+    } else {
+      $('#search-demo-container').show();
+    }
   });
 });
